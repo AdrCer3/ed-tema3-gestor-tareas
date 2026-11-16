@@ -14,10 +14,10 @@ public class Entregable2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int opcion = 0;
-        double num1 = 0;
-        double num2 = 0;
+        double resultado;
         while (opcion != 5) {
             mostrarMenu();
+            int operacion = sc.nextInt();
             try {
                 opcion = Integer.parseInt(sc.nextLine());
                 if (opcion >= 1 && opcion <= 4) {
@@ -25,10 +25,11 @@ public class Entregable2 {
                     int a = Integer.parseInt(sc.nextLine());
                     System.out.print("Segundo número: ");
                     int b = Integer.parseInt(sc.nextLine());
-                    if (opcion == 1) {
-                        System.out.println("Resultado: " + (a + b));
+                    switch(operacion) {
+                        case 1:
+                            resultado= suma(a, b);
+                            mostrarResultadoFinal(resultado);
                     }
-                    // ... aquí van las opciones 2, 3 y 4
                 }
             } catch (NumberFormatException e) {
             System.out.println("Entrada no válida");
@@ -36,17 +37,21 @@ public class Entregable2 {
         }
     }
     
-    public static void suma(Scanner sc, double num1, double num2){
+    public static double suma(int a, int b){
         double resultado;
-        System.out.println("Introduzca el primer sumando: ");
-        num1 = sc.nextDouble();
-        System.out.println("Introduzca el segundo sumando: ");
-        num2 = sc.nextDouble();
         
-        resultado = num1 + num2;
         
+        resultado = a + b;
+        return resultado;
+        
+    }
+
+    
+    public static void mostrarResultadoFinal(double resultado){
         System.out.println("El resultado es: " + resultado);
     }
+
+
     public static void mostrarMenu(){
         System.out.print("Elige una opción: ");
         System.out.println("1. Sumar");
