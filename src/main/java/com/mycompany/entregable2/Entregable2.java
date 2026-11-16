@@ -25,4 +25,6 @@ public class Entregable2 {
         
         System.out.println("El resultado es: " + resultado);
     }
+    
+    public static void mostrarResultadoFinal(){}
 }
