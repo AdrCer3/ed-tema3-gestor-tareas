@@ -60,4 +60,9 @@ public class Entregable2 {
         System.out.println("4. Dividir");
         System.out.println("5. Salir");
      }
+    public static double division(double a, double b){
+        double resultado;
+        resultado = a/b;
+        return resultado;
+    }
 }
