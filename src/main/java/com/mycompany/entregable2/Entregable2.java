@@ -29,6 +29,9 @@ public class Entregable2 {
                         case 1:
                             resultado= suma(a, b);
                             mostrarResultadoFinal(resultado);
+                        case 2:
+                            resultado= resta(a,b);
+                            mostrarResultadoFinal(resultado);
                     }
                 }
             } catch (NumberFormatException e) {
@@ -46,6 +49,11 @@ public class Entregable2 {
         
     }
 
+    public static int resta(int a, int b){
+        int resultado;
+        resultado= a - b;
+        return resultado;
+    }
     
     public static void mostrarResultadoFinal(double resultado){
         System.out.println("El resultado es: " + resultado);
@@ -60,6 +68,7 @@ public class Entregable2 {
         System.out.println("4. Dividir");
         System.out.println("5. Salir");
      }
+    
     public static double division(double a, double b){
         double resultado;
         resultado = a/b;
