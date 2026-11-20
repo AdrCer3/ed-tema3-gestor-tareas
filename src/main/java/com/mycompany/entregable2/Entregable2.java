@@ -3,6 +3,7 @@
  */
 
 package com.mycompany.entregable2;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -15,36 +16,44 @@ public class Entregable2 {
         Scanner sc = new Scanner(System.in);
         int opcion = 0;
         double resultado;
+        int a=0;
+        int b=0;
         while (opcion != 5) {
-            mostrarMenu();
-            int operacion = sc.nextInt();
             try {
-                opcion = Integer.parseInt(sc.nextLine());
-                if (opcion >= 1 && opcion <= 4) {
-                    System.out.print("Primer número: ");
-                    int a = Integer.parseInt(sc.nextLine());
-                    System.out.print("Segundo número: ");
-                    int b = Integer.parseInt(sc.nextLine());
-                    switch(operacion) {
+                mostrarMenu();
+                opcion = sc.nextInt();
+                    if(opcion>0&&opcion<5){
+                        System.out.println("Primer número: ");
+                    a = sc.nextInt();
+                    System.out.println("Segundo número: ");
+                    b = sc.nextInt();
+                    }
+                    switch(opcion) {
                         case 1:
                             resultado= suma(a, b);
                             mostrarResultadoFinal(resultado);
+                            break;
                         case 2:
                             resultado= resta(a,b);
                             mostrarResultadoFinal(resultado);
+                            break;
                         case 3:
                             resultado=multiplicacion(a,b);
                             mostrarResultadoFinal(resultado);
+                            break;
                         case 4:
                             resultado=division(a,b);
                             mostrarResultadoFinal(resultado);
+                            break;
                         case 5:
                             System.out.println("Saliendo de la calculadora, hasta pronto");
+                            break;
                         default:
                             System.out.println("Escoge una opción válida");
+                            break;
                     }
-                }
-            } catch (NumberFormatException e) {
+                
+            } catch (InputMismatchException e) {
             System.out.println("Entrada no válida");
             }
         }
@@ -71,7 +80,7 @@ public class Entregable2 {
 
 
     public static void mostrarMenu(){
-        System.out.print("Elige una opción: ");
+        System.out.println("Elige una opción: ");
         System.out.println("1. Sumar");
         System.out.println("2. Restar");
         System.out.println("3. Multiplicar");
