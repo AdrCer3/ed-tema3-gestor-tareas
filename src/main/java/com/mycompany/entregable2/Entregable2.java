@@ -32,6 +32,16 @@ public class Entregable2 {
                         case 2:
                             resultado= resta(a,b);
                             mostrarResultadoFinal(resultado);
+                        case 3:
+                            resultado=multiplicacion(a,b);
+                            mostrarResultadoFinal(resultado);
+                        case 4:
+                            resultado=division(a,b);
+                            mostrarResultadoFinal(resultado);
+                        case 5:
+                            System.out.println("Saliendo de la calculadora, hasta pronto");
+                        default:
+                            System.out.println("Escoge una opción válida");
                     }
                 }
             } catch (NumberFormatException e) {
@@ -68,6 +78,12 @@ public class Entregable2 {
         System.out.println("4. Dividir");
         System.out.println("5. Salir");
      }
+    
+    public static int multiplicacion(int a, int b){
+        int resultado;
+        resultado = a*b;
+        return resultado;
+    }
     
     public static double division(double a, double b){
         double resultado;
